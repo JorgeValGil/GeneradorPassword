@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="copiar">
+    <file>copiar.png</file>
+  </qresource>
+</RCC>
