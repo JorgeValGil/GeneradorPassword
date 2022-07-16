@@ -1,17 +1,21 @@
-import var, sys
-from PyQt5 import QtGui
-import string
 import random
+import string
 
-class Eventos():
+from PyQt5 import QtGui
 
-    def Salir(self):
+import sys
+import var
+
+
+class Eventos:
+
+    def salir(self):
         try:
             sys.exit()
         except Exception as error:
             print("Error %s: " % str(error))
 
-    def CopiarPassword(self):
+    def copiar_password(self):
         if var.ui.lineEdit_password.text() != '':
             cb = QtGui.QGuiApplication.clipboard()
             cb.clear(mode=cb.Clipboard)
@@ -20,8 +24,7 @@ class Eventos():
         else:
             var.ui.labelstatusbar.setText('GENERA UNA CONTRASEÑA PARA PODER COPIARLA')
 
-
-    def GenerarPassword(self):
+    def generar_password(self):
 
         password_size = var.ui.spinBox_password_size.value()
         numbers = var.ui.checkBox_numbers.isChecked()
@@ -49,5 +52,3 @@ class Eventos():
                 password += password_printable[x]
             var.ui.lineEdit_password.setText(password)
             var.ui.labelstatusbar.setText('CONTRASEÑA GENERADA')
-
-
